@@ -17,6 +17,7 @@ let currentIndex = 0;
 // DOM Elements
 const galleryImage = document.getElementById('gallery-image');
 const progressEl = document.getElementById('progress');
+const captionEl = document.getElementById('caption');
 
 // Initialize gallery
 function initGallery() {
@@ -35,6 +36,7 @@ function showImage(index) {
 
     galleryImage.src = image.src;
     galleryImage.alt = image.caption || `Permacultr screenshot ${index + 1}`;
+    captionEl.textContent = image.caption || '';
     progressEl.textContent = `${index + 1} / ${images.length}`;
 }
 
