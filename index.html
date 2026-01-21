@@ -7,41 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Permacultr</h1>
-        <p class="tagline">Permaculture Software Preview</p>
-    </header>
+    <div class="fullscreen-gallery">
+        <img id="gallery-image" src="" alt="Permacultr software screenshot">
 
-    <main class="gallery-container">
-        <div class="gallery">
-            <button class="nav-btn prev" onclick="prevImage()" aria-label="Previous image">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
+        <button class="nav-btn prev" onclick="prevImage()" aria-label="Previous image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
 
-            <div class="image-wrapper">
-                <img id="gallery-image" src="" alt="Permacultr software screenshot">
-                <div class="image-caption" id="image-caption"></div>
-            </div>
+        <button class="nav-btn next" onclick="nextImage()" aria-label="Next image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
 
-            <button class="nav-btn next" onclick="nextImage()" aria-label="Next image">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
-
-        <div class="progress">
-            <span id="current-index">1</span> / <span id="total-images">10</span>
-        </div>
-
-        <div class="dots" id="dots"></div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Permacultr by FaithTech Austria</p>
-    </footer>
+        <div class="progress" id="progress">1 / 10</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
