@@ -1,15 +1,16 @@
 // Gallery Configuration
 const images = [
-    { src: 'images/1.png', caption: 'Screenshot 1' },
-    { src: 'images/2.png', caption: 'Screenshot 2' },
-    { src: 'images/3.png', caption: 'Screenshot 3' },
-    { src: 'images/4.png', caption: 'Screenshot 4' },
-    { src: 'images/5.png', caption: 'Screenshot 5' },
-    { src: 'images/6.png', caption: 'Screenshot 6' },
-    { src: 'images/7.png', caption: 'Screenshot 7' },
-    { src: 'images/8.png', caption: 'Screenshot 8' },
-    { src: 'images/9.png', caption: 'Screenshot 9' },
-    { src: 'images/10.png', caption: 'Screenshot 10' },
+    { src: 'images/1.png', title: 'Create a new project for your land', subtitle: 'Start a dedicated project to plan and design your land.' },
+    { src: 'images/2.png', title: 'Easily draw your area of interest', subtitle: 'Draw your land boundaries directly on the map in seconds.' },
+    { src: 'images/3.png', title: 'Get data from your current infrastructure', subtitle: 'View and manage existing infrastructure already on your land.' },
+    { src: 'images/4.png', title: 'Integrate data sources', subtitle: 'Combine multiple data sources into one unified map.' },
+    { src: 'images/5.png', title: 'Toggle on and off the layers you need for your planning step', subtitle: 'Turn map layers on or off to focus on what matters now.' },
+    { src: 'images/6.png', title: 'See how water flows at your land', subtitle: 'Visualize natural water flow across your landscape.' },
+    { src: 'images/7.png', title: 'Choose to see only the main streams', subtitle: 'Filter the map to display only major waterways.' },
+    { src: 'images/8.png', title: 'Get your contour lines', subtitle: 'Reveal contour lines to understand elevation and slopes.' },
+    { src: 'images/9.png', title: 'Check climatic indicators on the environmental dashboard', subtitle: 'Explore key climate insights for your land in one dashboard.' },
+    { src: 'images/10.png', title: 'Print or export the map data you need', subtitle: 'Export or print your maps for fieldwork and planning.' },
+    { src: 'images/11.png', title: 'Create custom layers and design your system', subtitle: 'Add your own layers and draw plants, zones, and sections directly on the map.' },
 ];
 
 let currentIndex = 0;
@@ -17,7 +18,8 @@ let currentIndex = 0;
 // DOM Elements
 const galleryImage = document.getElementById('gallery-image');
 const progressEl = document.getElementById('progress');
-const captionEl = document.getElementById('caption');
+const captionTitleEl = document.getElementById('caption-title');
+const captionSubtitleEl = document.getElementById('caption-subtitle');
 
 // Initialize gallery
 function initGallery() {
@@ -35,8 +37,9 @@ function showImage(index) {
     const image = images[index];
 
     galleryImage.src = image.src;
-    galleryImage.alt = image.caption || `Permacultr screenshot ${index + 1}`;
-    captionEl.textContent = image.caption || '';
+    galleryImage.alt = image.title || `Permacultr screenshot ${index + 1}`;
+    captionTitleEl.textContent = image.title || '';
+    captionSubtitleEl.textContent = image.subtitle || '';
     progressEl.textContent = `${index + 1} / ${images.length}`;
 }
 
